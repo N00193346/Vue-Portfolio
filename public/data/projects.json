@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "VueDo",
+    "description": "My first Vue.js project, a simple to do list with the ability to add, complete and delete tasks.",
+    "website": "",
+    "tags": ["Vue"],
+    "images": ["vuedo.png"],
+    "date": "2021",
+    "demo": "vue-do",
+    "links": {
+      "github": "https://github.com/N00193346/vue-do"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Vue-Giphy",
+    "description": "A Vue application that retrieves and displays Gifs from the Giphy API. The application allows the user to view trending gifs, select a random gif or search a gif by name.",
+    "website": "",
+    "tags": ["Vue", "API"],
+    "images": ["vuegif.png"],
+    "date": "2021",
+    "demo": "vue-gifs",
+    "links": {
+      "github": "https://github.com/N00193346/vue-giph"
+    }
+  },
+  {
+    "id": 3,
+    "title": "A Vue of the World",
+    "description": "A college assignment using Vue, retrieves and display information from the REST Countries API. The user can search for information on countries from around the world.",
+    "website": "",
+    "tags": ["Vue", "API"],
+    "images": ["vueWorld.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/FrontEndDev-CA1",
+      "hosted": "https://a-vue-of-the-world.web.app/"
+    }
+  },
+  {
+    "id": 4,
+    "title": "College Vue",
+    "description": "A college assignment using Vue. A user has full CRUD capabailites by sending and receiving various infomation about lecturers, courses and enrolements via a College API",
+    "website": "",
+    "tags": ["Vue", "API"],
+    "images": ["vueCollege.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/FrontEndDev-CA2",
+      "hosted": "https://collegevue-1e039.web.app/"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Space Escape",
+    "description": "A video game 'Space Escape' created using the Javascript games engine Phaser. This was a college assignment for a Software project module which was completed over a duration of 6 weeks ",
+    "website": "",
+    "tags": ["Phaser", "JavaScript"],
+    "images": ["spaceEscape.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/Phaser-JS-Game",
+      "hosted": "https://iadt-y2-swproject.github.io/sw-project-ca1-N00193346/"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Film Finder",
+    "description": "A Flutter app that will take in a user's input and search the movie database API for a film with a matching title. The app has built in error checking in case a result is not found.",
+    "tags": ["Flutter", "API"],
+    "images": ["filmFinder.gif"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/Flutter-Film-Finder"
+    }
+  }
+]

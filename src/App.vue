@@ -1,49 +1,26 @@
-
 <template>
-<v-app>
- 
-    <MyNavBar />
-    <!-- <b-container>
-      <br />
-      <b-row> -->
-        <v-content class="background">
-        <router-view  />
-        </v-content>
-      <!-- </b-row> -->
-      <MyFooter />
-    <!-- </b-container> -->
-  
-</v-app>
+  <v-app>
+    <v-content class="background">
+      <router-view />
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import MyNavBar from "@/components/MyNavBar.vue"
-import MyFooter from "@/components/MyFooter.vue"
 export default {
   name: "App",
-  components: {
-    MyNavBar,
-    MyFooter
-  },
+  components: {},
   data() {
-    return{
-    }
+    return {};
   },
-  created(){
-   if (localStorage.getItem('token')) {
-      this.$store.commit('SET_LOGGED_IN_STATUS', true)       
-   } else { 
-     this.$store.commit('SET_LOGGED_IN_STATUS', false)       
-     }
-  },
-  methods: {
- 
-  }
+
+  methods: {},
 };
 </script>
 
 <style scoped>
-.background{
-  background-color: #edf0f2;
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@1,700&display=swap");
+.background {
+  background-color: #2a2a2a;
 }
 </style>

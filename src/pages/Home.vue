@@ -1,27 +1,54 @@
 <template>
   <v-container>
-    <h1>Home</h1>
+    <h1 class="textStyle">Paul Doyle Portfolio</h1>
+    <h3 class="textStyle">Third Year Creative Computing Student at IADT</h3>
+
+    <v-layout row class="mt-4 mb-2">
+      <v-chip @click="filterVue()" class="ml-3 mr-3">Vue</v-chip>
+
+      <v-chip @click="filterAPI()" class="ml-3 mr-3">API</v-chip>
+
+      <v-chip @click="filterJavaScript()" class="ml-3 mr-3">JavaScript</v-chip>
+    </v-layout>
 
     <v-layout row wrap>
-      <v-flex sm6 lg6 v-for="project in projects" :key="project.id">
-        <v-card elevation="2" outlined class="ma-3">
+      <v-flex sm6 lg6 v-for="project in filtered" :key="project.id">
+        <v-card color="#cacaca" elevation="2" outlined class="ma-3">
           <v-img
-            height="250"
-            src="https://bulma.io/images/placeholders/1280x960.png"
+            contain
+            height="300"
+            v-if="`${project.images[0]}`"
+            :src="require(`../assets/images/${project.images[0]}`)"
           ></v-img>
 
           <v-card-title>{{ project.title }}</v-card-title>
 
           <v-card-text>
-            <v-row align="center" class="mx-0">
-              <v-chip v-for="tag in project.tags" :key="tag">{{ tag }}</v-chip>
+            <v-row align="center">
+              <v-chip v-for="tag in project.tags" :key="tag" class="ml-3">{{
+                tag
+              }}</v-chip>
             </v-row>
+          </v-card-text>
 
-            <div></div>
+          <v-card-text class="mt-n4" style="font-size: 1em"
+            >{{ project.description }}
           </v-card-text>
 
           <v-card-actions>
-            <v-btn class="secondary"> Github </v-btn>
+            <v-btn :href="project.links.github" class="secondary">
+              Github
+            </v-btn>
+            <router-link v-if="project.demo" :to="{ name: project.demo }">
+              <v-btn class="ml-5"> Demo</v-btn>
+            </router-link>
+
+            <v-btn
+              v-if="project.links.hosted"
+              :href="project.links.hosted"
+              class="ml-5"
+              >Hosted</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -36,6 +63,7 @@ export default {
   data() {
     return {
       projects: [],
+      searchQuery: "",
     };
   },
   mounted() {
@@ -44,7 +72,17 @@ export default {
   created() {
     document.title = "Portfolio";
   },
-
+  computed: {
+    filtered() {
+      return this.projects.filter((project) => {
+        if (this.searchQuery == "") {
+          return project.tags;
+        } else {
+          return project.tags.includes(this.searchQuery);
+        }
+      });
+    },
+  },
   methods: {
     getAllProjects() {
       fetch("./data/projects.json")
@@ -54,7 +92,39 @@ export default {
           this.projects = data;
         });
     },
+    filterVue() {
+      if (this.searchQuery != "Vue") {
+        this.searchQuery = "Vue";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterAPI() {
+      if (this.searchQuery != "API") {
+        this.searchQuery = "API";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterJavaScript() {
+      if (this.searchQuery != "JavaScript") {
+        this.searchQuery = "JavaScript";
+      } else {
+        this.searchQuery = "";
+      }
+    },
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.textStyle {
+  color: #cacaca;
+  font-family: "Montserrat", sans-serif;
+
+  /* font-family: 'Lato', sans-serif; */
+}
+
+.cardStyle {
+  background-color: #cacaca;
+}
+</style>
