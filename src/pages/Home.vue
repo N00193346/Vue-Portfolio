@@ -1,30 +1,46 @@
 <template>
   <v-container>
-    <h1 class="textStyle">Paul Doyle Portfolio</h1>
-    <h3 class="textStyle">Third Year Creative Computing Student at IADT</h3>
+    <h1 class="textStyle d-flex justify-center">Paul Doyle</h1>
+    <h3 class="textStyle2 d-flex justify-center">
+      Third Year Creative Computing Student at IADT
+    </h3>
+    <h3 class="textStyle2 d-flex justify-center">
+      Front-End Developer at Webspace
+    </h3>
+    <h5 class="textStyle3 d-flex justify-center">
+      Use the tags to filter projects by skill/technology.
+    </h5>
 
-    <v-layout row class="mt-4 mb-2">
+    <v-layout row class="mt-4 mb-2 d-flex justify-center">
       <v-chip @click="filterVue()" class="ml-3 mr-3">Vue</v-chip>
 
       <v-chip @click="filterAPI()" class="ml-3 mr-3">API</v-chip>
 
       <v-chip @click="filterJavaScript()" class="ml-3 mr-3">JavaScript</v-chip>
+
+      <v-chip @click="filterP5()" class="ml-3 mr-3">P5</v-chip>
+
+      <v-chip @click="filterKotlin()" class="ml-3 mr-3">Kotlin</v-chip>
+
+      <v-chip @click="filterFlutter()" class="ml-3 mr-3">Flutter</v-chip>
+
+      <v-chip @click="filterHTML()" class="ml-3 mr-3">HTML</v-chip>
+
+      <v-chip @click="filterPHP()" class="ml-3 mr-3">PHP</v-chip>
     </v-layout>
 
     <v-layout row wrap>
       <v-flex sm6 lg6 v-for="project in filtered" :key="project.id">
         <v-card color="#cacaca" elevation="2" outlined class="ma-3">
+          <v-card-title>{{ project.title }}</v-card-title>
           <v-img
-            contain
-            height="300"
+            height="400"
             v-if="`${project.images[0]}`"
             :src="require(`../assets/images/${project.images[0]}`)"
           ></v-img>
 
-          <v-card-title>{{ project.title }}</v-card-title>
-
           <v-card-text>
-            <v-row align="center">
+            <v-row align="center mt-2 mb-2">
               <v-chip v-for="tag in project.tags" :key="tag" class="ml-3">{{
                 tag
               }}</v-chip>
@@ -64,6 +80,13 @@ export default {
     return {
       projects: [],
       searchQuery: "",
+      input: "",
+      Vue: "Vue",
+      API: "API",
+      JavaScript: "JavaScript",
+      P5: "P5",
+      Kotlin: "Kotlin",
+      Flutter: "Flutterthis.",
     };
   },
   mounted() {
@@ -113,6 +136,48 @@ export default {
         this.searchQuery = "";
       }
     },
+    filterP5() {
+      if (this.searchQuery != "P5") {
+        this.searchQuery = "P5";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterKotlin() {
+      if (this.searchQuery != "Kotlin") {
+        this.searchQuery = "Kotlin";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterFlutter() {
+      if (this.searchQuery != "Flutter") {
+        this.searchQuery = "Flutter";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterHTML() {
+      if (this.searchQuery != "HTML") {
+        this.searchQuery = "HTML";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterPHP() {
+      if (this.searchQuery != "PHP") {
+        this.searchQuery = "PHP";
+      } else {
+        this.searchQuery = "";
+      }
+    },
+    filterTag(tag) {
+      if (this.searchQuery != tag) {
+        this.searchQuery = tag;
+      } else {
+        this.searchQuery = "";
+      }
+    },
   },
 };
 </script>
@@ -120,8 +185,20 @@ export default {
 .textStyle {
   color: #cacaca;
   font-family: "Montserrat", sans-serif;
+  font-size: 72px;
 
   /* font-family: 'Lato', sans-serif; */
+}
+
+.textStyle2 {
+  color: #cacaca;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+}
+
+.textStyle3 {
+  color: #8a8a8a;
+  font-family: "Lato", sans-serif;
 }
 
 .cardStyle {

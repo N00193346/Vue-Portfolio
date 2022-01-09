@@ -42,7 +42,7 @@
   {
     "id": 4,
     "title": "College Vue",
-    "description": "A college assignment using Vue. A user has full CRUD capabailites by sending and receiving various infomation about lecturers, courses and enrolements via a College API",
+    "description": "A college assignment using Vue. A user has full CRUD capabailites by sending and receiving various infomation about lecturers, courses and enrolements via a College API.",
     "website": "",
     "tags": ["Vue", "API"],
     "images": ["vueCollege.png"],
@@ -56,7 +56,7 @@
   {
     "id": 5,
     "title": "Space Escape",
-    "description": "A video game 'Space Escape' created using the Javascript games engine Phaser. This was a college assignment for a Software project module which was completed over a duration of 6 weeks ",
+    "description": "A video game 'Space Escape' created using the Javascript games engine Phaser. This was a college assignment which was completed over a period of 6 weeks. ",
     "website": "",
     "tags": ["Phaser", "JavaScript"],
     "images": ["spaceEscape.png"],
@@ -69,7 +69,7 @@
   },
   {
     "id": 6,
-    "title": "Film Finder",
+    "title": "Film Finder (Flutter)",
     "description": "A Flutter app that will take in a user's input and search the movie database API for a film with a matching title. The app has built in error checking in case a result is not found.",
     "tags": ["Flutter", "API"],
     "images": ["filmFinder.gif"],
@@ -77,6 +77,54 @@
     "demo": "",
     "links": {
       "github": "https://github.com/N00193346/Flutter-Film-Finder"
+    }
+  },
+  {
+    "id": 7,
+    "title": "P5 Pool",
+    "description": "A college assignment were the task was to create an animation by implementating mathematical equations into a programme using the p5 JavaScript library. ",
+    "tags": ["P5", "JavaScript"],
+    "images": ["pool.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/P5.Pool"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Film Finder (Kotlin)",
+    "description": "The Film Finder App revisited as part of a college assignment. Rewritten from scratch using kotlin, with added functionality such as the ability to add films to a watchlist.",
+    "tags": ["Kotlin", "API"],
+    "images": ["filmfinderKot.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/Flutter-Film-Finder"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Incredible Instruments",
+    "description": "A website for a store that sells musical instruments built with HTML and CSS. Has full manager and customer CRUD functionality. Product information stored and retrieved from a local database using PHP.",
+    "tags": ["HTML", "CSS", "PHP"],
+    "images": ["incredible.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/Shopping-Cart-Website-"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Weather App",
+    "description": "A weather app built with flutter. The app takes in a user's location and uses it along with the Open Weather Map API to retrieve weather information and displays the current weather for the area ",
+    "tags": ["Flutter", "API"],
+    "images": ["weather.png"],
+    "date": "2021",
+    "demo": "",
+    "links": {
+      "github": "https://github.com/N00193346/Flutter-Weather"
     }
   }
 ]
